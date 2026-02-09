@@ -1,0 +1,63 @@
+# FastAPI
+
+Creating RESTful APIs is extremely fast with FastAPI. Pydantic is a technology used for data validation, so you no longer have to create validators manually.
+
+## Setup Instructions
+
+### Create a Virtual Environment
+
+A virtual environment allows you to run the project with all required packages isolated from your system.
+
+1. Create a virtual environment:
+   ```bash
+   python3 -m venv myenv
+   ```
+
+2. Activate the virtual environment:
+   ```bash
+   source myenv/bin/activate
+   ```
+
+3. Verify installed packages:
+   ```bash
+   pip list
+   ```
+
+### Install Dependencies
+
+1. Install FastAPI:
+    ```bash
+    pip install fastapi
+    ```
+
+2. Install Uvicorn (ASGI server):
+    ```bash
+    pip install uvicorn
+    ```
+
+### Create a Simple API
+
+1. Create a file named `books.py`:
+    ```python
+    from fastapi import FastAPI
+    
+    app = FastAPI()
+    
+    @app.get("/")
+    def read_api():
+         return {"Welcome": "Eric"}
+    ```
+
+2. Run the server:
+    ```bash
+    uvicorn books:app --reload
+    ```
+
+3. Access the API documentation at `http://127.0.0.1:8000/docs`
+
+## Common HTTP Methods
+
+- **GET**: Read a resource
+- **POST**: Create a resource
+- **PUT**: Update a resource
+- **DELETE**: Delete a resource
